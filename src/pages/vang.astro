@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Welcome to Astro.">
+<main class='bg-white '>
+	<header 
+	id="landing-header"class="py-2 px-20 flex items-center sticky top-0 w-full justify-between z-50 bg-white">
+		<div class="flex flex-grow basis-0"></div>
+		<nav >
+			<ul class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
+				<li><a href="#ancla-1">Artistas y pinturas</a></li>
+				<li><a href="#ancla-2">Museos</a></li>
+				<li><a href="">Ayuda a perritos</a></li>
+				<li><a href="#ancla-3">Sobre nosotros</a></li>
+			</ul>
+		</nav>
+
+		
+
+
+
+		<nav  class="flex flex-grow basis-0 justify-end">
+			<ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:py-4 [&>li>a]:px-4" >
+				<li><a href="https://www.google.com/maps/search/arte+chile+/@-29.9435697,-71.3773046,12z/data=!3m1!4b1?entry=ttu">Local Art Map</a></li>
+			</ul>
+		</nav>
+
+		<div id="menu-backdrop" class="absolute bg-black/5 backdrop-blur-lg rounded left-[var(--left)] top-[var(--top)]
+		w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out  opacity-0 -z-10" >
+			
+		</div>
+	</header>
+
+	<a name="ancla-1"></a>
+	<div class="flex w-full h-screen justify-center items-center font-medium" >
+		<div><h2 class="text-center text-5xl">Pinturas de Vincent Van Gogh</h2></div>
+	</div>
+
+	
+	<div class="w-full h-full flex px-1.5 justify-center items-center font-medium p-10" >
+		<div class="basis-2/5"><a href=""><img src="https://tienda.funathome.cl/cdn/shop/products/VAN-GOGH-LA-NOCHE-ESTRELLADA-PINTURA-NUMEROS_480x.jpg?v=1676398884" alt="" class=""></a></div>
+		<div class="basis-2/5 p-20" ><h2 class="text-4xl">Autorretrato 
+			</div>
+	</div>
+
+	<div class="w-full h-100"></div>
+	<div class="w-full h-full flex px-1.5 justify-center items-center font-medium p-10" >
+		<div class="basis-2/5 p-20" ><h2 class="text-4xl">Pablo Picasso</h2> </div>
+		<div class="basis-2/5"><img src="https://historia-arte.com/_/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbSI6WyJcL2FydHdvcmtcL2ltYWdlRmlsZVwvNjA4MGIxNGVjZTQ3Ni5qcGciLCJyZXNpemUsMjAwMCwyMDAwIl19.IZI19bU_fg7TylrA3Le4CLcvcajDlyuKkeE1YO4zKWg.jpg" alt="" class=""></div>
+	
+	</div>
+
+
+	<div class="w-full h-100"></div>
+	<div class="w-full h-full flex px-1.5 justify-center items-center font-medium p-10" >
+		<div class="basis-2/5 h-2/6"><img src="https://totenart.com/noticias/wp-content/uploads/2021/04/autorretrato-con-oreja-vendada-y-caballete-1889.jpg" alt="" class=""></div>
+		<div class="basis-2/5 p-20" ><h2 class="text-4xl">Leonardo Da Vinci</h2> <p class="text-2xl font-small">Leonardo Da Vinci es uno de los grandes maestros del Renacimiento, famoso como pintor, escultor, arquitecto, ingeniero y científico.</p></div>
+		
+	
+	</div>
+
+	
+	
+
+
+	
+	<script>
+		const listItem = document.querySelectorAll("#landing-header li")
+		const menuBackDrop = document.querySelector("#menu-backdrop") as HTMLElement
+	  
+		listItem.forEach((item) => {
+		  item.addEventListener("mouseenter", () => {
+			const { left, top, width, height } = item.getBoundingClientRect()
+	  
+			menuBackDrop.style.setProperty("--left", `${left}px`)
+			menuBackDrop.style.setProperty("--top", `${top}px`)
+			menuBackDrop.style.setProperty("--width", `${width}px`)
+			menuBackDrop.style.setProperty("--height", `${height}px`)
+	  
+			menuBackDrop.style.opacity = "1"
+			menuBackDrop.style.visibility = "visible"
+		  })
+	  
+		  item.addEventListener("mouseleave", () => {
+			menuBackDrop.style.opacity = "0"
+			menuBackDrop.style.visibility = "hidden"
+		  })
+		})
+	  </script>
+</main>
+</Layout>
