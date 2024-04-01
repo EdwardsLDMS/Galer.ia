@@ -9,7 +9,125 @@ import Layout from '../layouts/Layout.astro';
 	
 
 	
+<script>
+function factorialFuncion() {
+    let numero;
+    console.log('Define el número del cual requieres el factorial');
+    numero = parseInt(prompt());
+    let resultado = numero;
+    if (numero === 0) {
+        resultado = 1;
+    } else {
+        for (let valorMultiplicador = numero; valorMultiplicador >= 2; valorMultiplicador--) {
+            resultado *= (valorMultiplicador - 1);
+        }
+    }
+    console.log(resultado);
+}
 
+function ivaFuncion() {
+    console.log("Bienvenido a la calculadora de IVA, ingresa un valor de producto y te diré el valor del IVA");
+    let valorProducto = parseFloat(prompt());
+    let valorIva = valorProducto / 100 * 19;
+    let v = "El valor del IVA es " + valorIva.toString();
+    console.log(v);
+}
+
+function funCuadratica() {
+    console.log("Inserta el valor que requieres para la variable a");
+    let aVar = parseFloat(prompt());
+    console.log("Inserta el valor que requieres para la variable b");
+    let bVar = parseFloat(prompt());
+    console.log("Inserta el valor que requieres para la variable c");
+    let cVar = parseFloat(prompt());
+    let discriminante = (bVar * bVar) - (4 * aVar * cVar);
+    if (discriminante > 0) {
+        let raizFun = Math.sqrt(discriminante);
+        let solucion1 = ((-bVar) + raizFun) / (2 * aVar);
+        let solucion2 = ((-bVar) - raizFun) / (2 * aVar);
+        console.log("La primera solución es " + solucion1.toString());
+        console.log("La segunda solución es " + solucion2.toString());
+    } else {
+        if (discriminante === 0) {
+            let solucionUnica = -bVar / (2 * aVar);
+            console.log("La solución es " + solucionUnica.toString());
+        } else {
+            console.log("Solución Compleja");
+        }
+    }
+}
+
+function promedioFuncion() {
+    console.log("¿Cuántas notas requieres?");
+    let notasRequeridas = parseInt(prompt());
+    let vNotasTotales = 0;
+    for (let n = 1; n <= notasRequeridas; n++) {
+        console.log("Dime la nota " + n.toString());
+        let p = parseFloat(prompt());
+        vNotasTotales += p;
+    }
+    console.log(vNotasTotales);
+    let promedio = vNotasTotales / notasRequeridas;
+    console.log(promedio);
+}
+
+function primoFuncion() {
+    console.log("Ingresa un número");
+    let numeroIngresado = parseInt(prompt());
+    let divisores = 0;
+    for (let numero = 1; numero <= numeroIngresado; numero++) {
+        if (numeroIngresado % numero === 0) {
+            divisores++;
+        }
+    }
+    if (divisores === 2) {
+        console.log("Es primo");
+    } else {
+        console.log("No es primo");
+    }
+}
+
+function inicio() {
+    console.log("Inserte 1 si desea utilizar la calculadora de factoriales.");
+    console.log("Inserte 2 si desea utilizar la calculadora de promedio.");
+    console.log("Inserte 3 si desea utilizar la calculadora de IVA.");
+    console.log("Inserte 4 si desea utilizar la calculadora de números primos.");
+    console.log("Inserte 5 si desea utilizar la calculadora de soluciones de función cuadrática.");
+    let x = parseInt(prompt());
+    switch (x) {
+        case 1:
+            factorialFuncion();
+            break;
+        case 2:
+            promedioFuncion();
+            break;
+        case 3:
+            ivaFuncion();
+            break;
+        case 4:
+            primoFuncion();
+            break;
+        case 5:
+            funCuadratica();
+            break;
+        default:
+            console.log("No es posible");
+    }
+    console.log("¿Deseas otra operación? Marca 1 si lo deseas; de lo contrario, marca cualquier tecla DOS VECES");
+    let respuesta = parseInt(prompt());
+    switch (respuesta) {
+        case 1:
+            inicio();
+            break;
+        default:
+            console.log("Gracias por usar este programa");
+            break;
+    }
+}
+
+inicio();
+
+</script>
 	
 
 
