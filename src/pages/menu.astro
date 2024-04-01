@@ -2,6 +2,153 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
+<Layout title="Welcome to Astro.">
+<main class='bg-white '>
+	<header 
+	id="landing-header"class="py-2 px-20 flex items-center sticky top-0 w-full justify-between z-50 bg-white">
+		<div class="flex flex-grow basis-0"></div>
+		<nav >
+			<ul class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
+				<li><a href="#ancla-1">Inicio</a></li>
+				<li><a href="#ancla-2">Presentacion</a></li>
+				<li><a href="">Programas</a></li>
+				<li><a href="#ancla-3">Sobre nosotros</a></li>
+			</ul>
+		</nav>
+
+		
+
+
+
+		<nav  class="flex flex-grow basis-0 justify-end">
+			<ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:py-4 [&>li>a]:px-4" >
+				<li><a href="https://www.google.com/maps/search/programming+in+silicon+valey/@37.5630568,-122.1692248,9.75z?entry=ttu">Silicon Valey Programming Map</a></li>
+
+			</ul>
+		</nav>
+
+		<div id="menu-backdrop" class="absolute bg-black/5 backdrop-blur-lg rounded left-[var(--left)] top-[var(--top)]
+		w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out  opacity-0 -z-10" >
+			
+		</div>
+	</header>
+
+	<a name ="ancla-1"></a>
+	<div class="flex w-full h-screen justify-center items-center font-medium" >
+		<div><h2 class="text-center text-5xl">Portafolio</h2></div>
+	</div>
+
+	
+	<div class="w-full h-full flex px-1.5 justify-center items-center font-medium p-10" >
+		<div class="basis-2/5"><a href="/vang"><img src="https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="" class=""></a></div>
+		<div class="basis-2/5 p-20" ><h2 class="text-4xl">Sobre mi  
+			
+			
+		</h2> <p class="text-2xl font-small">(en holandés, Zelfportret)
+			(Vincent Van Gogh) <br>Autorretrato pintado por Vincent van Gogh a finales de agosto de 1889 durante su estancia en Saint-Rémy-de-Provence. La pintura está en la colección de la Galería Nacional de Arte de Washington.</p></div>
+	</div>
+
+	<div class="w-full h-100"></div>
+	<div class="w-full h-full flex px-1.5 justify-center items-center font-medium p-10" >
+		<div class="basis-2/5 p-20" ><h2 class="text-4xl">Pablo Picasso</h2> <p class="text-2xl font-small">¿Qué es lo más importante que hizo Picasso?
+			Picasso se hizo famoso como uno de los pioneros del Cubismo, que creó junto con Georges Braque, y continuó desarrollando sus diferentes facetas artísticas a un ritmo comparable a la celeridad de los cambios culturales y tecnológicos del siglo XX, cuyo arte dominó y revolucionó.
+		</p></div>
+		<div class="basis-2/5"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Pablo_picasso_1.jpg/800px-Pablo_picasso_1.jpg" alt="" class=""></div>
+	
+	</div>
+
+
+	<div class="w-full h-100"></div>
+	<div class="w-full h-full flex px-1.5 justify-center items-center font-medium p-10" >
+		<div class="basis-2/5 h-2/6"><img src="https://www.worldhistory.org/img/r/p/500x600/12518.jpg?v=1691868603" alt="" class=""></div>
+		<div class="basis-2/5 p-20" ><h2 class="text-4xl">Leonardo Da Vinci</h2> <p class="text-2xl font-small">Leonardo Da Vinci es uno de los grandes maestros del Renacimiento, famoso como pintor, escultor, arquitecto, ingeniero y científico.</p></div>
+		
+	
+	</div>
+
+	<div class="w-full h-100"></div>
+	<div class="w-full h-full flex px-1.5 justify-center items-center font-medium p-10" >
+		<div class="basis-2/5 p-20" ><h2 class="text-4xl">Claudio Monet</h2> <p class="text-2xl font-small">Es un pintor francés conocido por su aportación en el movimiento artístico denominado Impresionismo.
+		</p></div>
+		<div class="basis-2/5"><img src="data:image/jpeg;base64,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" alt="" class="h-96"></div>
+		
+	
+	</div>
+
+	<a name="ancla-2"></a>
+
+	<div class="flex w-full h-screen justify-center items-center font-medium" >
+		<div><h2 class="text-center text-5xl">Programas</h2></div>
+	</div>
+
+	<div class="w-full h-100"></div>
+	<div class="w-full h-full flex px-1.5 justify-center items-center font-medium" >
+		<div class="basis-2/5 p-20" ><h2 class="text-3xl">Menu  <br> (Museo Picasso Málaga)</h2> </div>
+		<div class="basis-2/5"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/24/b2/c5/2b/patio-central-museo-picasso.jpg?w=1200&h=-1&s=1" alt=""></div>
+		<a href="menu.astro">Menu</a>
+	</div>
+
+
+	
+
+	<div class="flex w-full h-screen justify-center items-center font-medium flex-wrap" >
+		<div class="w-screen pt-14"><h2 class="text-center text-5xl " >Sobre nosotros</h2>
+			<div class="justify-center items-center flex py-10"><p class="w-10/12 ">
+				Somos un grupo de estudiantes de segundo medio que buscamos con esta página que empezó como proyecto,queremos dar a conocer más sobre el mundo del arte con la finalidad de mostrar lo hermoso de este ,recopilando obras por muchos.Deseamos que nuestro esfuerzo y dedicación se vean reflejados en este hermoso proyecto
+			</p></div>
+		</div>
+
+			
+				<div class="text-2xl inline-block">
+					<h3 class="inline-block mx-2.5">Agustina Serafimov</h3>
+					<h3 class="inline-block mx-2.5">Isidora Belmar</h3>
+					<h3 class="inline-block mx-2.5">Francisca Valdivia</h3>
+					<h3 class="inline-block mx-2.5">Edwards Lopez de Maturana</h3>
+					<h3 class=" mx-2.5 text-center">Profesora:Camila Venti</h3>
+
+				</div>
+		
+			
+	</div>
+
+	
+	
+
+	
+
+	
+
+
+	
+	<script>
+		const listItem = document.querySelectorAll("#landing-header li")
+		const menuBackDrop = document.querySelector("#menu-backdrop") as HTMLElement
+	  
+		listItem.forEach((item) => {
+		  item.addEventListener("mouseenter", () => {
+			const { left, top, width, height } = item.getBoundingClientRect()
+	  
+			menuBackDrop.style.setProperty("--left", `${left}px`)
+			menuBackDrop.style.setProperty("--top", `${top}px`)
+			menuBackDrop.style.setProperty("--width", `${width}px`)
+			menuBackDrop.style.setProperty("--height", `${height}px`)
+	  
+			menuBackDrop.style.opacity = "1"
+			menuBackDrop.style.visibility = "visible"
+		  })
+	  
+		  item.addEventListener("mouseleave", () => {
+			menuBackDrop.style.opacity = "0"
+			menuBackDrop.style.visibility = "hidden"
+		  })
+		})
+	  </script>
+</main>
+</Layout>
+<!---
+import Layout from '../layouts/Layout.astro';
+---
+
 <Layout title="">
 <main class='bg-white '>
 <html>
@@ -135,4 +282,4 @@ inicio();
 	
 
 </main>
-</Layout>
+</Layout>-->
